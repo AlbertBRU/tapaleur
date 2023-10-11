@@ -1,5 +1,5 @@
 let app = {
-    init: function() {
+    init: function () {
         console.log('init');
 
         let inputs = document.querySelectorAll('input');
@@ -7,8 +7,6 @@ let app = {
             inputs[i].addEventListener('change', app.cleanAndCheck);
             inputs[i].addEventListener('keyup', app.cleanAndCheck);
         }
-        
-        document.querySelector('.submit-button').addEventListener('click', app.handleButtonClick);
     },
 
     /**
@@ -19,7 +17,7 @@ let app = {
     * 
     * Désactive le bouton si un des deux champs est vide (tant pis si tu joue à minuit pile).
     */
-    cleanAndCheck: function() {
+    cleanAndCheck: function () {
         const heureInput = document.querySelector("input[name='heure']");
         const minuteInput = document.querySelector("input[name='minute']");
         let heure = heureInput.value;
@@ -34,8 +32,8 @@ let app = {
         }
         else if (heure.length == 1) {
             heureInput.value = '0' + heure;
-        } 
-        
+        }
+
         if (minute > 59) {
             minute = '59';
         }
@@ -44,21 +42,34 @@ let app = {
         }
         else if (minute.length == 1) {
             minute = '0' + minute;
-        } 
-        
-        let submitButton = document.querySelector('button');
-        if (heure != '' && minute != '') {
-            submitButton.classList.remove('disabled');
-            submitButton.removeAttribute('disabled');
-        } else {
-            submitButton.setAttribute('disabled', 'disabled');
         }
+
+        let submitButton = document.querySelector('.submit-button');
+        if (heure != '' && minute != '') {
+            submitButton.classList.remove('submit-button-disabled');
+            submitButton.classList.add('submit-button-enabled');
+
+            document.querySelector('.submit-button-enabled').addEventListener('mouseover', app.handleButtonHover);
+            document.querySelector('.submit-button-enabled').addEventListener('click', app.handleButtonClick);
+
+        } else {
+            submitButton.classList.remove('submit-button-enabled');
+            submitButton.classList.add('submit-button-disabled');
+        }
+    },
+
+    handleButtonHover: function () {
+        const greenBox = document.querySelector('.submit-button-box-green');
+        const pinkBox = document.querySelector('.submit-button-box-pink');
+        
+        greenBox.classList.toggle('top-box');
+        pinkBox.classList.toggle('top-box');
     },
 
     /**
      * Compare l'heure entrée par l'utilisateur avec l'heure actuelle.
      */
-    handleButtonClick: function() {
+    handleButtonClick: function () {
         let heure = document.querySelector("input[name='heure']").value;
         let minute = document.querySelector("input[name='minute']").value;
         let date = new Date();
@@ -70,7 +81,7 @@ let app = {
         }
         else {
             document.querySelector('.result').innerHTML = 'T\'es mauvais, Jack !';
-        }      
+        }
     }
 };
 

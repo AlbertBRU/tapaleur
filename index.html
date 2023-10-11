@@ -4,8 +4,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Stp, t'a pas l'heure?</title>
+    <title>Stp, t'as pas l'heure?</title>
 </head>
 <body>
 <div class="header">
@@ -25,10 +27,11 @@
             <span class="dots">:</span>
             <input type="number" name="minute" class="input" value="00" min="0" max="59">
         </div>
-        <button class="submit-button disabled" disabled>
-            <!-- <img src="assets/brush-stroke.svg"> -->
-            Valider
-        </button>
+        <div class="submit-button submit-button-disabled">
+            <span class="submit-button-box-pink"></span>
+            <span class="submit-button-box-green top-box"></span>
+            <span class="submit-button-text">Valider</span>
+        </div>
 </div>
 <div class="result">
 </div>
