@@ -41,7 +41,7 @@ let app = {
             minuteInput.value = minute.replace(/.*(\d{2})$/, '$1');
         }
         else if (minute.length == 1) {
-            minute = '0' + minute;
+            minuteInput.value = '0' + minute;
         }
 
         let submitButton = document.querySelector('.submit-button');
@@ -49,12 +49,8 @@ let app = {
             submitButton.classList.remove('submit-button-disabled');
             submitButton.classList.add('submit-button-enabled');
 
-            document.querySelector('.submit-button-enabled').addEventListener('mouseover', app.handleButtonHover);
+            document.querySelector('.submit-button-enabled').addEventListener('mouseenter', app.handleButtonHover);
             document.querySelector('.submit-button-enabled').addEventListener('click', app.handleButtonClick);
-
-        } else {
-            submitButton.classList.remove('submit-button-enabled');
-            submitButton.classList.add('submit-button-disabled');
         }
     },
 
