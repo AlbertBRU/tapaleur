@@ -1,0 +1,31 @@
+.body {
+    &.light {
+        background-color: white;
+    }
+    .header {
+        .title-container {
+            .light {
+                color: black;
+            }
+            .logo.light {
+                fill: black;
+            }
+        }
+        .subtitle.light {
+            color: black;
+        }
+    }
+    .main {
+        .input-block {
+            .input.light {
+                border: 2px solid black;
+            }
+            .dots.light {
+                color: black;
+            }
+        }
+    }
+    .result.light {
+        color: black;
+    }
+}

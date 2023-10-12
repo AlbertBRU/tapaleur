@@ -7,6 +7,8 @@ let app = {
             inputs[i].addEventListener('change', app.cleanAndCheck);
             inputs[i].addEventListener('keyup', app.cleanAndCheck);
         }
+        const clockLogo = document.querySelector('.logo');
+        clockLogo.addEventListener('click', app.handleToggleTheme);
     },
 
     /**
@@ -78,7 +80,38 @@ let app = {
         else {
             document.querySelector('.result').innerHTML = 'T\'es mauvais, Jack !';
         }
-    }
+    },
+
+    handleToggleTheme: function () {
+        console.log('toggle theme');
+        const darkDivs = document.querySelectorAll('.dark');
+        const lightDivs = document.querySelectorAll('.light');
+        console.log('lightDivs', lightDivs);
+        console.log('darkDivs', darkDivs);
+        
+        // check if darkDivs NodeList is empty
+        if (darkDivs.length == 0) {
+            console.log('darkDivs is empty');
+        }
+        if (lightDivs.length == 0) {
+            console.log('lightDivs is empty');
+        }
+
+
+        if (darkDivs.length != 0) {
+            console.log('switch to dark');
+            for (let i = 0; i < darkDivs.length; i++) {
+                darkDivs[i].classList.toggle('dark');
+                darkDivs[i].classList.toggle('light');
+            }
+        } else {
+            console.log('switch to light');
+            for (let i = 0; i < lightDivs.length; i++) {
+                lightDivs[i].classList.toggle('dark');
+                lightDivs[i].classList.toggle('light');
+            }
+        }
+    },
 };
 
 document.addEventListener('DOMContentLoaded', app.init);

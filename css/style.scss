@@ -1,4 +1,4 @@
-body {
+.body {
     background-color: #171923;
     display: flex;
     justify-content: center;
@@ -23,6 +23,7 @@ body {
                 border-radius: 25px;
                 top: 35px;
                 right: 18px;
+                fill: white;
             }
 
             .color-box-first {
@@ -131,7 +132,6 @@ body {
 
         .submit-button-disabled {
             cursor: not-allowed;
-
             .submit-button-box-green {
                 background-color: #818a81;
             }
