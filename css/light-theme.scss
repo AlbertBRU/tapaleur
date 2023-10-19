@@ -2,30 +2,36 @@
     &.light {
         background-color: white;
     }
+
     .header {
         .title-container {
             .light {
-                color: black;
+                color: #171923;
             }
+
             .logo.light {
-                fill: black;
+                fill: #171923;
             }
         }
+
         .subtitle.light {
-            color: black;
+            color: #171923;
         }
     }
+
     .main {
         .input-block {
             .input.light {
-                border: 2px solid black;
+                border: 2px solid #171923;
             }
+
             .dots.light {
-                color: black;
+                color: #171923;
             }
         }
     }
+
     .result.light {
-        color: black;
+        color: #171923;
     }
 }

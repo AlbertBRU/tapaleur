@@ -2,7 +2,6 @@
     width: 4rem;
     height: 2.5rem;
     border-radius: 1.5rem;
-    background-color: #F7D6A3;
     display: flex;
     align-items: center;
     padding-left: 5px;
@@ -14,15 +13,23 @@
     transition: 300ms;
 
     &.dark {
-        background: rgba(9,9,121,1);
+        background-color: #4D4D4D;
+        background-image: url("../assets/cloud-night.svg");
+        background-repeat: no-repeat;
+        background-position: bottom;
+        transition: none;
     }
-    
+
     &.light {
         background: rgb(130, 197, 209);
+        background-image: url("../assets/cloud-day.svg");
+        background-repeat: no-repeat;
+        background-position: bottom;
+        transition: none;
     }
- 
+
     .btn-circle {
-        background-color: black;
+        background-color: #1d2133;
         transform: translateX(0px);
         border-radius: 50%;
         width: 2rem;
@@ -47,6 +54,7 @@
             background-color: #F7D6A3;
             box-shadow: 0 0 0.5rem #9e7b46;
         }
+
         &.dark {
             width: 1.5rem;
             height: 1.5rem;

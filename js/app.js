@@ -1,4 +1,9 @@
 let app = {
+    /**
+     * - Initialise l'application.
+     * - Déclenche un console.log() pour vérifier que l'application est bien initialisée.
+     * - Prépare les écouteurs d'événements.
+     */
     init: function () {
         console.log('init');
 
@@ -7,8 +12,6 @@ let app = {
             inputs[i].addEventListener('change', app.cleanAndCheck);
             inputs[i].addEventListener('keyup', app.cleanAndCheck);
         }
-        // const clockLogo = document.querySelector('.logo');
-        // clockLogo.addEventListener('click', app.handleToggleTheme);
 
         const toggleThemeButton = document.querySelector('.btn-holder');
         toggleThemeButton.addEventListener('click', app.handleToggleTheme);
@@ -59,6 +62,9 @@ let app = {
         }
     },
 
+    /**
+     * Gère le switch des panels au survol du bouton.
+     */
     handleButtonHover: function () {
         const greenBox = document.querySelector('.submit-button-box-green');
         const pinkBox = document.querySelector('.submit-button-box-pink');
@@ -85,30 +91,19 @@ let app = {
         }
     },
 
+    /**
+     * Change le thème de la page.
+     */
     handleToggleTheme: function () {
-        console.log('toggle theme');
         const darkDivs = document.querySelectorAll('.dark');
         const lightDivs = document.querySelectorAll('.light');
-        console.log('lightDivs', lightDivs);
-        console.log('darkDivs', darkDivs);
-
-        // check if darkDivs NodeList is empty
-        if (darkDivs.length == 0) {
-            console.log('darkDivs is empty');
-        }
-        if (lightDivs.length == 0) {
-            console.log('lightDivs is empty');
-        }
-
 
         if (darkDivs.length != 0) {
-            console.log('switch to light');
             for (let i = 0; i < darkDivs.length; i++) {
                 darkDivs[i].classList.toggle('dark');
                 darkDivs[i].classList.toggle('light');
             }
         } else {
-            console.log('switch to dark');
             for (let i = 0; i < lightDivs.length; i++) {
                 lightDivs[i].classList.toggle('dark');
                 lightDivs[i].classList.toggle('light');
