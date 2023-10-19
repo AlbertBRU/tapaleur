@@ -1,5 +1,8 @@
 # tapaleur
 
+## Accessible ici :
+https://albertbru.github.io/tapaleur/
+
 ## C'est quoi?
 Tapaleur, c'est un mini-jeu inutile, donc indispensable. Les internets regorgent d'horloges, truffées de plus ou moins de fonctionnalités.
 
